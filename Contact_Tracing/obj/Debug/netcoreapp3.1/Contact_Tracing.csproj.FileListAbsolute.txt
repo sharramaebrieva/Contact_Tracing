@@ -1,0 +1,15 @@
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\bin\Debug\netcoreapp3.1\Contact_Tracing.exe
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\bin\Debug\netcoreapp3.1\Contact_Tracing.deps.json
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\bin\Debug\netcoreapp3.1\Contact_Tracing.runtimeconfig.json
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\bin\Debug\netcoreapp3.1\Contact_Tracing.runtimeconfig.dev.json
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\bin\Debug\netcoreapp3.1\Contact_Tracing.dll
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\bin\Debug\netcoreapp3.1\Contact_Tracing.pdb
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.csprojAssemblyReference.cache
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.Form1.resources
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.csproj.GenerateResource.cache
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.AssemblyInfoInputs.cache
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.AssemblyInfo.cs
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.dll
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.pdb
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.genruntimeconfig.cache
