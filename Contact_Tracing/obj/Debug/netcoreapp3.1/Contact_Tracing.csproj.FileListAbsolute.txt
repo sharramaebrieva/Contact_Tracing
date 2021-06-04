@@ -13,3 +13,4 @@ C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreap
 C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.dll
 C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.pdb
 C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.genruntimeconfig.cache
+C:\Users\LENOVO\source\repos\Contact_Tracing\Contact_Tracing\obj\Debug\netcoreapp3.1\Contact_Tracing.Form2.resources

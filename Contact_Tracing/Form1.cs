@@ -46,5 +46,16 @@ namespace Contact_Tracing
         {
             Gender = "Female";
         }
+
+        private void ButtonClick_Next(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            if (f2 == null)
+            {
+                f2.Parent = this;
+            }
+            f2.Show();
+            this.Hide();
+        }
     }
 }

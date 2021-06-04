@@ -41,11 +41,12 @@ namespace Contact_Tracing
             this.TextBox_Age = new System.Windows.Forms.TextBox();
             this.TextBox_Birthdate = new System.Windows.Forms.TextBox();
             this.TextBox_Address = new System.Windows.Forms.TextBox();
+            this.Button_Next = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Button_Save
             // 
-            this.Button_Save.Location = new System.Drawing.Point(232, 237);
+            this.Button_Save.Location = new System.Drawing.Point(53, 232);
             this.Button_Save.Name = "Button_Save";
             this.Button_Save.Size = new System.Drawing.Size(134, 50);
             this.Button_Save.TabIndex = 0;
@@ -151,11 +152,22 @@ namespace Contact_Tracing
             this.TextBox_Address.Size = new System.Drawing.Size(115, 23);
             this.TextBox_Address.TabIndex = 11;
             // 
+            // Button_Next
+            // 
+            this.Button_Next.Location = new System.Drawing.Point(301, 227);
+            this.Button_Next.Name = "Button_Next";
+            this.Button_Next.Size = new System.Drawing.Size(127, 73);
+            this.Button_Next.TabIndex = 12;
+            this.Button_Next.Text = "Next";
+            this.Button_Next.UseVisualStyleBackColor = true;
+            this.Button_Next.Click += new System.EventHandler(this.ButtonClick_Next);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Button_Next);
             this.Controls.Add(this.TextBox_Address);
             this.Controls.Add(this.TextBox_Birthdate);
             this.Controls.Add(this.TextBox_Age);
@@ -189,6 +201,7 @@ namespace Contact_Tracing
         private System.Windows.Forms.TextBox TextBox_Age;
         private System.Windows.Forms.TextBox TextBox_Birthdate;
         private System.Windows.Forms.TextBox TextBox_Address;
+        private System.Windows.Forms.Button Button_Next;
     }
 }
 
