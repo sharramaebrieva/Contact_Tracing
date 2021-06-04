@@ -19,22 +19,32 @@ namespace Contact_Tracing
 
         private void TextBoxName_TextChanged(object sender, EventArgs e)
         {
-            
+            Name = TextBox_Name.Text.ToString();
         }
 
 
+        
+        string Gender;
+
         private void ButtonClick_Save(object sender, EventArgs e)
         {
-            string Name = TextBox_Name.Text.ToString();
             string Age = TextBox_Age.Text.ToString();
             string Address = TextBox_Address.Text.ToString();
             string Birthdate = TextBox_Birthdate.Text.ToString();
-            string Male = RadioButton_Male.Text.ToString();
-            string Female = RadioButton_Female.Text.ToString();
 
             MessageBox.Show("Please check all your information!" + "\n\nName: " + Name
                 + "\nAge: " + Age + "\nCurrent Address: " + Address + "\nBirthdate: " + Birthdate
-                + "\nGender: " + Male + Female);
+                + "\nGender: " + Gender);
+        }
+
+        private void RadioButton_Male_CheckedChanged(object sender, EventArgs e)
+        {
+            Gender = "Male";
+        }
+
+        private void RadioButton_Female_CheckedChanged(object sender, EventArgs e)
+        {
+            Gender = "Female";
         }
     }
 }

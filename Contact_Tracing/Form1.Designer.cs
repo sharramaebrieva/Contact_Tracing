@@ -107,6 +107,7 @@ namespace Contact_Tracing
             this.RadioButton_Male.TabStop = true;
             this.RadioButton_Male.Text = "Male";
             this.RadioButton_Male.UseVisualStyleBackColor = true;
+            this.RadioButton_Male.CheckedChanged += new System.EventHandler(this.RadioButton_Male_CheckedChanged);
             // 
             // Button_Gender
             // 
@@ -127,6 +128,7 @@ namespace Contact_Tracing
             this.RadioButton_Female.TabStop = true;
             this.RadioButton_Female.Text = "Female";
             this.RadioButton_Female.UseVisualStyleBackColor = true;
+            this.RadioButton_Female.CheckedChanged += new System.EventHandler(this.RadioButton_Female_CheckedChanged);
             // 
             // TextBox_Age
             // 
