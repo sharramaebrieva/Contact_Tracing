@@ -62,6 +62,7 @@ namespace Contact_Tracing
             // Button_Save
             // 
             this.Button_Save.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button_Save.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button_Save.Location = new System.Drawing.Point(226, 250);
             this.Button_Save.Name = "Button_Save";
@@ -127,6 +128,7 @@ namespace Contact_Tracing
             // Button_Next
             // 
             this.Button_Next.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Button_Next.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button_Next.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button_Next.Location = new System.Drawing.Point(388, 250);
             this.Button_Next.Name = "Button_Next";
