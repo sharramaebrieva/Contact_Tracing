@@ -341,6 +341,7 @@ namespace Contact_Tracing
             this.Controls.Add(this.RadioButton_Male);
             this.Controls.Add(this.TextBox_LastName);
             this.Controls.Add(this.Button_Save);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "Contact Tracing";
