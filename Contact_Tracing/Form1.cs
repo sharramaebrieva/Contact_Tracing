@@ -19,18 +19,20 @@ namespace Contact_Tracing
 
         private void TextBoxName_TextChanged(object sender, EventArgs e)
         {
-            Name = TextBox_Name.Text.ToString();
+            Name = TextBox_LastName.Text.ToString();
         }
 
 
-        
+       
         string Gender;
 
         private void ButtonClick_Save(object sender, EventArgs e)
         {
             string Age = TextBox_Age.Text.ToString();
-            string Address = TextBox_Address.Text.ToString();
+            string Address = TextBox_City.Text.ToString();
             string Birthdate = TextBox_Birthdate.Text.ToString();
+
+            string Summary = Name + Age;
 
             MessageBox.Show("Please check all your information!" + "\n\nName: " + Name
                 + "\nAge: " + Age + "\nCurrent Address: " + Address + "\nBirthdate: " + Birthdate
