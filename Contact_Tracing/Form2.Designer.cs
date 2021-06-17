@@ -415,6 +415,7 @@ namespace Contact_Tracing
             this.Button_Save2.TabIndex = 10;
             this.Button_Save2.Text = "Save";
             this.Button_Save2.UseVisualStyleBackColor = false;
+            this.Button_Save2.Click += new System.EventHandler(this.Button_Save2_Click);
             // 
             // Button_Submit
             // 

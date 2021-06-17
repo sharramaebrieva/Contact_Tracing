@@ -17,7 +17,7 @@ namespace Contact_Tracing
 
         public void Form2_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void Question1_TextChanged(object sender, EventArgs e)
@@ -69,6 +69,22 @@ namespace Contact_Tracing
             Label_Question4.Text = "4.Have you traveled outside the Philippines in the last 14 days?";
             Label_Question5.Text = "5.Have you traveled outside the current city/ municipality where you reside?" +
                 "\nIf yes, specify which city / municipality you went to.";
+        }
+
+        private void Button_Save2_Click(object sender, EventArgs e)
+        {
+            string Yes1 = RadioButton_1Yes.Checked.ToString();
+            string Yes2 = RadioButton_2Yes.Checked.ToString();
+            string Yes3 = RadioButton_3Yes.Checked.ToString();
+            string Yes4 = RadioButton_4Yes.Checked.ToString();
+            string Yes5 = RadioButton_5Yes.Checked.ToString();
+
+            string No1 = RadioButton_1No.Checked.ToString();
+            string No2 = RadioButton_2No.Checked.ToString();
+            string No3 = RadioButton_3No.Checked.ToString();
+            string No4 = RadioButton_4No.Checked.ToString();
+            string No5 = RadioButton_5No.Checked.ToString();
+
         }
     }
 }

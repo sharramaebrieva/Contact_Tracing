@@ -39,7 +39,7 @@ namespace Contact_Tracing
        
         string Gender;
 
-        private void ButtonClick_Save(object sender, EventArgs e)
+        public void ButtonClick_Save(object sender, EventArgs e)
         {
             string Name = TextBox_LastName.Text + ", " + TextBox_FirstName.Text + ", " + TextBox_MiddleName.Text;
             string Age = TextBox_Age.Text;
