@@ -44,7 +44,6 @@ namespace Contact_Tracing
             this.Label_Question3 = new System.Windows.Forms.Label();
             this.Label_Question4 = new System.Windows.Forms.Label();
             this.Label_Question5 = new System.Windows.Forms.Label();
-            this.Button_ViewQuestions = new System.Windows.Forms.Button();
             this.TextBox_SpecifyCity = new System.Windows.Forms.TextBox();
             this.GroupBox_Question1 = new System.Windows.Forms.GroupBox();
             this.RadioButton_1No = new System.Windows.Forms.RadioButton();
@@ -73,13 +72,12 @@ namespace Contact_Tracing
             // 
             // Label_Question1
             // 
-            this.Label_Question1.AutoSize = true;
             this.Label_Question1.Location = new System.Drawing.Point(12, 36);
             this.Label_Question1.Name = "Label_Question1";
-            this.Label_Question1.Size = new System.Drawing.Size(89, 15);
+            this.Label_Question1.Size = new System.Drawing.Size(395, 39);
             this.Label_Question1.TabIndex = 0;
-            this.Label_Question1.Text = "View Question1";
-            this.Label_Question1.Click += new System.EventHandler(this.Question1_Click);
+            this.Label_Question1.Text = "1. Are you experiencing or did you have any of the following in the last 14 days?" +
+    " If yes, kindly check all the applicable experiences.";
             // 
             // GroupBox_Symptoms
             // 
@@ -92,11 +90,12 @@ namespace Contact_Tracing
             this.GroupBox_Symptoms.Controls.Add(this.checkBox3);
             this.GroupBox_Symptoms.Controls.Add(this.checkBox2);
             this.GroupBox_Symptoms.Controls.Add(this.checkBox1);
-            this.GroupBox_Symptoms.Location = new System.Drawing.Point(29, 71);
+            this.GroupBox_Symptoms.Location = new System.Drawing.Point(24, 64);
             this.GroupBox_Symptoms.Name = "GroupBox_Symptoms";
-            this.GroupBox_Symptoms.Size = new System.Drawing.Size(364, 256);
+            this.GroupBox_Symptoms.Size = new System.Drawing.Size(364, 249);
             this.GroupBox_Symptoms.TabIndex = 1;
             this.GroupBox_Symptoms.TabStop = false;
+            this.GroupBox_Symptoms.Visible = false;
             // 
             // checkBox9
             // 
@@ -190,58 +189,45 @@ namespace Contact_Tracing
             // 
             // Label_Question2
             // 
-            this.Label_Question2.AutoSize = true;
-            this.Label_Question2.Location = new System.Drawing.Point(12, 343);
+            this.Label_Question2.Location = new System.Drawing.Point(12, 332);
             this.Label_Question2.Name = "Label_Question2";
-            this.Label_Question2.Size = new System.Drawing.Size(89, 15);
+            this.Label_Question2.Size = new System.Drawing.Size(395, 50);
             this.Label_Question2.TabIndex = 2;
-            this.Label_Question2.Text = "View Question2";
-            this.Label_Question2.Click += new System.EventHandler(this.Question2_Click);
+            this.Label_Question2.Text = "2.Have you had face - to - face contact with a probable or confirmed COVID - 19 c" +
+    "ase within 1 meter and for more than 15 minutes for the past 14 days?";
             // 
             // Label_Question3
             // 
-            this.Label_Question3.AutoSize = true;
-            this.Label_Question3.Location = new System.Drawing.Point(12, 403);
+            this.Label_Question3.Location = new System.Drawing.Point(12, 388);
             this.Label_Question3.Name = "Label_Question3";
-            this.Label_Question3.Size = new System.Drawing.Size(89, 15);
+            this.Label_Question3.Size = new System.Drawing.Size(395, 52);
             this.Label_Question3.TabIndex = 3;
-            this.Label_Question3.Text = "View Question3";
-            this.Label_Question3.Click += new System.EventHandler(this.Question3_Click);
+            this.Label_Question3.Text = "3.Have you provided direct care for a patient with probable or confirmed COVID - " +
+    "19 case without using proper Personal Protective Equipment (PPE) for the past 14" +
+    " days?";
             // 
             // Label_Question4
             // 
-            this.Label_Question4.AutoSize = true;
-            this.Label_Question4.Location = new System.Drawing.Point(12, 463);
+            this.Label_Question4.Location = new System.Drawing.Point(12, 460);
             this.Label_Question4.Name = "Label_Question4";
-            this.Label_Question4.Size = new System.Drawing.Size(89, 15);
+            this.Label_Question4.Size = new System.Drawing.Size(388, 16);
             this.Label_Question4.TabIndex = 4;
-            this.Label_Question4.Text = "View Question4";
-            this.Label_Question4.Click += new System.EventHandler(this.Question4_Click);
+            this.Label_Question4.Text = "4.Have you traveled outside the Philippines in the last 14 days?";
             // 
             // Label_Question5
             // 
-            this.Label_Question5.AutoSize = true;
             this.Label_Question5.Location = new System.Drawing.Point(12, 496);
             this.Label_Question5.Name = "Label_Question5";
-            this.Label_Question5.Size = new System.Drawing.Size(89, 15);
+            this.Label_Question5.Size = new System.Drawing.Size(388, 37);
             this.Label_Question5.TabIndex = 5;
-            this.Label_Question5.Text = "View Question5";
-            this.Label_Question5.Click += new System.EventHandler(this.Question5_Click);
-            // 
-            // Button_ViewQuestions
-            // 
-            this.Button_ViewQuestions.Location = new System.Drawing.Point(12, 3);
-            this.Button_ViewQuestions.Name = "Button_ViewQuestions";
-            this.Button_ViewQuestions.Size = new System.Drawing.Size(120, 30);
-            this.Button_ViewQuestions.TabIndex = 6;
-            this.Button_ViewQuestions.Text = "View All Questions";
-            this.Button_ViewQuestions.UseVisualStyleBackColor = true;
-            this.Button_ViewQuestions.Click += new System.EventHandler(this.ButtonView_Click);
+            this.Label_Question5.Text = "5.Have you traveled outside the current city/ municipality where you reside? If y" +
+    "es, specify which city / municipality you went to.";
             // 
             // TextBox_SpecifyCity
             // 
             this.TextBox_SpecifyCity.Location = new System.Drawing.Point(12, 536);
             this.TextBox_SpecifyCity.Name = "TextBox_SpecifyCity";
+            this.TextBox_SpecifyCity.ReadOnly = true;
             this.TextBox_SpecifyCity.Size = new System.Drawing.Size(198, 23);
             this.TextBox_SpecifyCity.TabIndex = 7;
             // 
@@ -265,6 +251,7 @@ namespace Contact_Tracing
             this.RadioButton_1No.TabStop = true;
             this.RadioButton_1No.Text = "NO";
             this.RadioButton_1No.UseVisualStyleBackColor = true;
+            this.RadioButton_1No.CheckedChanged += new System.EventHandler(this.RadioButton_1No_CheckedChanged);
             // 
             // RadioButton_1Yes
             // 
@@ -276,12 +263,13 @@ namespace Contact_Tracing
             this.RadioButton_1Yes.TabStop = true;
             this.RadioButton_1Yes.Text = "YES";
             this.RadioButton_1Yes.UseVisualStyleBackColor = true;
+            this.RadioButton_1Yes.CheckedChanged += new System.EventHandler(this.RadioButton_1Yes_CheckedChanged);
             // 
             // GroupBox_Question2
             // 
             this.GroupBox_Question2.Controls.Add(this.RadioButton_2No);
             this.GroupBox_Question2.Controls.Add(this.RadioButton_2Yes);
-            this.GroupBox_Question2.Location = new System.Drawing.Point(430, 328);
+            this.GroupBox_Question2.Location = new System.Drawing.Point(430, 318);
             this.GroupBox_Question2.Name = "GroupBox_Question2";
             this.GroupBox_Question2.Size = new System.Drawing.Size(147, 54);
             this.GroupBox_Question2.TabIndex = 9;
@@ -297,6 +285,7 @@ namespace Contact_Tracing
             this.RadioButton_2No.TabStop = true;
             this.RadioButton_2No.Text = "NO";
             this.RadioButton_2No.UseVisualStyleBackColor = true;
+            this.RadioButton_2No.CheckedChanged += new System.EventHandler(this.RadioButton_2No_CheckedChanged);
             // 
             // RadioButton_2Yes
             // 
@@ -308,14 +297,15 @@ namespace Contact_Tracing
             this.RadioButton_2Yes.TabStop = true;
             this.RadioButton_2Yes.Text = "YES";
             this.RadioButton_2Yes.UseVisualStyleBackColor = true;
+            this.RadioButton_2Yes.CheckedChanged += new System.EventHandler(this.RadioButton_2Yes_CheckedChanged);
             // 
             // GroupBox_Question3
             // 
             this.GroupBox_Question3.Controls.Add(this.RadioButton_3No);
             this.GroupBox_Question3.Controls.Add(this.RadioButton_3Yes);
-            this.GroupBox_Question3.Location = new System.Drawing.Point(430, 388);
+            this.GroupBox_Question3.Location = new System.Drawing.Point(430, 378);
             this.GroupBox_Question3.Name = "GroupBox_Question3";
-            this.GroupBox_Question3.Size = new System.Drawing.Size(147, 44);
+            this.GroupBox_Question3.Size = new System.Drawing.Size(147, 54);
             this.GroupBox_Question3.TabIndex = 9;
             this.GroupBox_Question3.TabStop = false;
             // 
@@ -329,6 +319,7 @@ namespace Contact_Tracing
             this.RadioButton_3No.TabStop = true;
             this.RadioButton_3No.Text = "NO";
             this.RadioButton_3No.UseVisualStyleBackColor = true;
+            this.RadioButton_3No.CheckedChanged += new System.EventHandler(this.RadioButton_3No_CheckedChanged);
             // 
             // RadioButton_3Yes
             // 
@@ -340,6 +331,7 @@ namespace Contact_Tracing
             this.RadioButton_3Yes.TabStop = true;
             this.RadioButton_3Yes.Text = "YES";
             this.RadioButton_3Yes.UseVisualStyleBackColor = true;
+            this.RadioButton_3Yes.CheckedChanged += new System.EventHandler(this.RadioButton_3Yes_CheckedChanged);
             // 
             // GroupBox_Question4
             // 
@@ -347,7 +339,7 @@ namespace Contact_Tracing
             this.GroupBox_Question4.Controls.Add(this.RadioButton_4Yes);
             this.GroupBox_Question4.Location = new System.Drawing.Point(430, 438);
             this.GroupBox_Question4.Name = "GroupBox_Question4";
-            this.GroupBox_Question4.Size = new System.Drawing.Size(147, 43);
+            this.GroupBox_Question4.Size = new System.Drawing.Size(147, 54);
             this.GroupBox_Question4.TabIndex = 9;
             this.GroupBox_Question4.TabStop = false;
             // 
@@ -361,6 +353,7 @@ namespace Contact_Tracing
             this.RadioButton_4No.TabStop = true;
             this.RadioButton_4No.Text = "NO";
             this.RadioButton_4No.UseVisualStyleBackColor = true;
+            this.RadioButton_4No.CheckedChanged += new System.EventHandler(this.RadioButton_4No_CheckedChanged);
             // 
             // RadioButton_4Yes
             // 
@@ -372,14 +365,15 @@ namespace Contact_Tracing
             this.RadioButton_4Yes.TabStop = true;
             this.RadioButton_4Yes.Text = "YES";
             this.RadioButton_4Yes.UseVisualStyleBackColor = true;
+            this.RadioButton_4Yes.CheckedChanged += new System.EventHandler(this.RadioButton_4Yes_CheckedChanged);
             // 
             // GroupBox_Question5
             // 
             this.GroupBox_Question5.Controls.Add(this.RadioButton_5No);
             this.GroupBox_Question5.Controls.Add(this.RadioButton_5Yes);
-            this.GroupBox_Question5.Location = new System.Drawing.Point(430, 487);
+            this.GroupBox_Question5.Location = new System.Drawing.Point(430, 498);
             this.GroupBox_Question5.Name = "GroupBox_Question5";
-            this.GroupBox_Question5.Size = new System.Drawing.Size(147, 44);
+            this.GroupBox_Question5.Size = new System.Drawing.Size(147, 54);
             this.GroupBox_Question5.TabIndex = 9;
             this.GroupBox_Question5.TabStop = false;
             // 
@@ -393,6 +387,7 @@ namespace Contact_Tracing
             this.RadioButton_5No.TabStop = true;
             this.RadioButton_5No.Text = "NO";
             this.RadioButton_5No.UseVisualStyleBackColor = true;
+            this.RadioButton_5No.CheckedChanged += new System.EventHandler(this.RadioButton_5No_CheckedChanged);
             // 
             // RadioButton_5Yes
             // 
@@ -404,6 +399,7 @@ namespace Contact_Tracing
             this.RadioButton_5Yes.TabStop = true;
             this.RadioButton_5Yes.Text = "YES";
             this.RadioButton_5Yes.UseVisualStyleBackColor = true;
+            this.RadioButton_5Yes.CheckedChanged += new System.EventHandler(this.RadioButton_5Yes_CheckedChanged);
             // 
             // Button_Save2
             // 
@@ -441,7 +437,6 @@ namespace Contact_Tracing
             this.Controls.Add(this.GroupBox_Question2);
             this.Controls.Add(this.GroupBox_Question1);
             this.Controls.Add(this.TextBox_SpecifyCity);
-            this.Controls.Add(this.Button_ViewQuestions);
             this.Controls.Add(this.Label_Question5);
             this.Controls.Add(this.Label_Question4);
             this.Controls.Add(this.Label_Question3);
@@ -487,7 +482,6 @@ namespace Contact_Tracing
         private System.Windows.Forms.Label Label_Question4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Label_Question5;
-        private System.Windows.Forms.Button Button_ViewQuestions;
         private System.Windows.Forms.TextBox TextBox_SpecifyCity;
         private System.Windows.Forms.GroupBox GroupBox_Question1;
         private System.Windows.Forms.RadioButton RadioButton_1No;

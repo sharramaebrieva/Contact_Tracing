@@ -10,6 +10,13 @@ namespace Contact_Tracing
 {
     public partial class Form2 : Form
     {
+        string Answer1 = "";
+        string Answer2 = "";
+        string Answer3 = "";
+        string Answer4 = "";
+        string Answer5 = "";
+
+        
 
         public Form2()
         {
@@ -18,8 +25,7 @@ namespace Contact_Tracing
 
         public void Form2_Load(object sender, EventArgs e)
         {
-            Label_Question1.Text = "1. Are you experiencing or did you have any of the following in the" +
-                "\nlast 14 days? If yes, kindly check all the applicable experiences.";
+            
         }
 
         private void Question1_TextChanged(object sender, EventArgs e)
@@ -27,71 +33,79 @@ namespace Contact_Tracing
 
         }
 
-        private void Question1_Click(object sender, EventArgs e)
-        {
-            Label_Question1.Text = "1. Are you experiencing or did you have any of the following in the" +
-                "\nlast 14 days? If yes, kindly check all the applicable experiences.";
-        }
+        
 
-        private void Question2_Click(object sender, EventArgs e)
-        {
-            Label_Question2.Text = "2.Have you had face - to - face contact with a probable or confirmed" +
-                "\nCOVID - 19 case within 1 meter and for more than 15" +
-                "\nminutes for the past 14 days?";
-        }
+        
 
-        private void Question3_Click(object sender, EventArgs e)
-        {
-            Label_Question3.Text = "3.Have you provided direct care for a patient with probable or confirmed" +
-                "\nCOVID - 19 case without using proper \"Personal Protective" +
-                "\nEquipment (PPE)\" for the past 14 days?";
-        }
+        
 
-        private void Question4_Click(object sender, EventArgs e)
-        {
-            Label_Question4.Text = "4.Have you traveled outside the Philippines in the last 14 days?";
-        }
+        
+        
 
-        private void Question5_Click(object sender, EventArgs e)
-        {
-            Label_Question5.Text = "5.Have you traveled outside the current city/ municipality where you reside?" +
-                "\nIf yes, specify which city / municipality you went to.";
-        }
-
-        private void ButtonView_Click(object sender, EventArgs e)
-        {
-            Label_Question1.Text = "1. Are you experiencing or did you have any of the following in the" +
-                "\nlast 14 days? If yes, kindly check all the applicable experiences.";
-            Label_Question2.Text = "2.Have you had face - to - face contact with a probable or confirmed" +
-                "\nCOVID - 19 case within 1 meter and for more than 15" +
-                "\nminutes for the past 14 days?";
-            Label_Question3.Text = "3.Have you provided direct care for a patient with probable or confirmed" +
-                "\nCOVID - 19 case without using proper \"Personal Protective" +
-                "\nEquipment (PPE)\" for the past 14 days?";
-            Label_Question4.Text = "4.Have you traveled outside the Philippines in the last 14 days?";
-            Label_Question5.Text = "5.Have you traveled outside the current city/ municipality where you reside?" +
-                "\nIf yes, specify which city / municipality you went to.";
-        }
+        
 
         private void Button_Save2_Click(object sender, EventArgs e)
         {
-            string Yes1 = RadioButton_1Yes.Checked.ToString();
-            string Yes2 = RadioButton_2Yes.Checked.ToString();
-            string Yes3 = RadioButton_3Yes.Checked.ToString();
-            string Yes4 = RadioButton_4Yes.Checked.ToString();
-            string Yes5 = RadioButton_5Yes.Checked.ToString();
-
-            string No1 = RadioButton_1No.Checked.ToString();
-            string No2 = RadioButton_2No.Checked.ToString();
-            string No3 = RadioButton_3No.Checked.ToString();
-            string No4 = RadioButton_4No.Checked.ToString();
-            string No5 = RadioButton_5No.Checked.ToString();
-
+            if (Answer1 == "" || Answer2 == "" || Answer3 == "" || Answer4 == "" || Answer5 == "")
             {
-                if (No1 == No2)
-                    MessageBox.Show("Yes");
+                MessageBox.Show("Please answer all required questions!");
             }
+            
+        }
 
+        private void RadioButton_1Yes_CheckedChanged(object sender, EventArgs e)
+        {
+            Answer1 = "Yes";
+            GroupBox_Symptoms.Visible = true;
+        }
+
+        private void RadioButton_1No_CheckedChanged(object sender, EventArgs e)
+        {
+            Answer1 = "No";
+        }
+
+        private void RadioButton_2Yes_CheckedChanged(object sender, EventArgs e)
+        {
+            Answer2 = "Yes";
+        }
+
+        private void RadioButton_2No_CheckedChanged(object sender, EventArgs e)
+        {
+            Answer2 = "No";
+        }
+
+
+        private void RadioButton_3Yes_CheckedChanged(object sender, EventArgs e)
+        {
+            Answer3 = "Yes";
+        }
+
+        private void RadioButton_3No_CheckedChanged(object sender, EventArgs e)
+        {
+            Answer3 = "No";
+        }
+
+        private void RadioButton_4Yes_CheckedChanged(object sender, EventArgs e)
+        {
+            Answer4 = "Yes";
+        }
+
+        private void RadioButton_4No_CheckedChanged(object sender, EventArgs e)
+        {
+            Answer4 = "No";
+        }
+
+        private void RadioButton_5Yes_CheckedChanged(object sender, EventArgs e)
+        {
+            Answer5 = "Yes";
+            TextBox_SpecifyCity.ReadOnly = false;
+        }
+
+        private void RadioButton_5No_CheckedChanged(object sender, EventArgs e)
+        {
+            Answer5 = "No";
+            TextBox_SpecifyCity.Text = "";
+            TextBox_SpecifyCity.ReadOnly = true;
         }
     }
 }

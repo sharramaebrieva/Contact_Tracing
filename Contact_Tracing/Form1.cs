@@ -105,7 +105,7 @@ namespace Contact_Tracing
             f2.Show();
             this.Hide();
 
-            FileLocation = File.AppendText(@"C:\Users\LENOVO\Desktop\Contact-Tracing-Info.txt");
+            FileLocation = File.AppendText(@"C:\Users\LENOVO\Desktop\trial.txt");
             FileLocation.WriteLine("CONTACT TRACING FOR COVID-19\nPersonal Information\n");
             FileLocation.WriteLine(Summary + "\n");
             FileLocation.Close();
