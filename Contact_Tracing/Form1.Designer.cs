@@ -110,6 +110,7 @@ namespace Contact_Tracing
             this.TextBox_Age.Name = "TextBox_Age";
             this.TextBox_Age.Size = new System.Drawing.Size(59, 23);
             this.TextBox_Age.TabIndex = 9;
+            this.TextBox_Age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Age_KeyPress);
             // 
             // TextBox_City
             // 
@@ -281,6 +282,7 @@ namespace Contact_Tracing
             this.TextBox_ContactNumber.Name = "TextBox_ContactNumber";
             this.TextBox_ContactNumber.Size = new System.Drawing.Size(127, 23);
             this.TextBox_ContactNumber.TabIndex = 30;
+            this.TextBox_ContactNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_ContactNumber_KeyPress);
             // 
             // Label_Reminder2
             // 

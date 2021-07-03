@@ -69,11 +69,19 @@ namespace Contact_Tracing
                  && TextBox_Age.Text != "" && TextBox_Birthdate.Text != "" &&
                  TextBox_ContactNumber.Text != "" && TextBox_Brgy.Text != ""
                  && TextBox_Municipality.Text != "" && TextBox_City.Text != ""
-                 && Gender != "")
+                 && Gender != "" && TextBox_ContactNumber.Text.Length == 11)
             {
                 MessageBox.Show("Please check all your information!\n\n" + Summary + "\n\nIf all the information are "
                     + "correct, click OK then click Next. Thank You!");
                 Button_Next.Enabled = true;
+            }
+            else if (TextBox_LastName.Text != "" && TextBox_FirstName.Text != ""
+                 && TextBox_Age.Text != "" && TextBox_Birthdate.Text != "" &&
+                 TextBox_ContactNumber.Text != "" && TextBox_Brgy.Text != ""
+                 && TextBox_Municipality.Text != "" && TextBox_City.Text != ""
+                 && Gender != "" && TextBox_ContactNumber.Text.Length != 11)
+            {
+                MessageBox.Show("Please enter your 11-digit Mobile Number!");
             }
         }
 
@@ -106,6 +114,34 @@ namespace Contact_Tracing
         private void PickBirthdate(object sender, EventArgs e)
         {
             TextBox_Birthdate.CustomFormat = "MMMM dd, yyyy";
+        }
+
+        private void TextBox_Age_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char value = e.KeyChar;
+
+            if (!Char.IsDigit(value) && value != (char) Keys.Back && value != (char) Keys.Delete)
+            {
+                e.Handled = true;
+            }
+        }
+
+        
+
+        private void TextBox_ContactNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char value = e.KeyChar;
+            if (TextBox_ContactNumber.Text.Length >= 11)
+                if (!Char.IsDigit(value) && value != (char)Keys.Back && value != (char)Keys.Delete)
+                {
+                    e.Handled = true;
+                }
+                else
+                { 
+                    MessageBox.Show("Please enter your 11-digit Mobile Number!");
+                }
+            
+            
         }
     }
 }

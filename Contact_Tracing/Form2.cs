@@ -10,6 +10,7 @@ namespace Contact_Tracing
 {
     public partial class Form2 : Form
     {
+
         public Form2()
         {
             InitializeComponent();
@@ -17,7 +18,8 @@ namespace Contact_Tracing
 
         public void Form2_Load(object sender, EventArgs e)
         {
-
+            Label_Question1.Text = "1. Are you experiencing or did you have any of the following in the" +
+                "\nlast 14 days? If yes, kindly check all the applicable experiences.";
         }
 
         private void Question1_TextChanged(object sender, EventArgs e)
