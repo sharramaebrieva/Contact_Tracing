@@ -102,5 +102,10 @@ namespace Contact_Tracing
             FileLocation.WriteLine(Summary + "\n");
             FileLocation.Close();
         }
+
+        private void PickBirthdate(object sender, EventArgs e)
+        {
+            TextBox_Birthdate.CustomFormat = "MMMM dd, yyyy";
+        }
     }
 }

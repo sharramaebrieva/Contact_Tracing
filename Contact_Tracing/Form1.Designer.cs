@@ -34,7 +34,6 @@ namespace Contact_Tracing
             this.RadioButton_Male = new System.Windows.Forms.RadioButton();
             this.RadioButton_Female = new System.Windows.Forms.RadioButton();
             this.TextBox_Age = new System.Windows.Forms.TextBox();
-            this.TextBox_Birthdate = new System.Windows.Forms.TextBox();
             this.TextBox_City = new System.Windows.Forms.TextBox();
             this.Button_Next = new System.Windows.Forms.Button();
             this.Label_LastName = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@ namespace Contact_Tracing
             this.TextBox_ContactNumber = new System.Windows.Forms.TextBox();
             this.Label_Reminder2 = new System.Windows.Forms.Label();
             this.Label_Reminder1 = new System.Windows.Forms.Label();
+            this.TextBox_Birthdate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // Button_Save
@@ -110,13 +110,6 @@ namespace Contact_Tracing
             this.TextBox_Age.Name = "TextBox_Age";
             this.TextBox_Age.Size = new System.Drawing.Size(59, 23);
             this.TextBox_Age.TabIndex = 9;
-            // 
-            // TextBox_Birthdate
-            // 
-            this.TextBox_Birthdate.Location = new System.Drawing.Point(192, 87);
-            this.TextBox_Birthdate.Name = "TextBox_Birthdate";
-            this.TextBox_Birthdate.Size = new System.Drawing.Size(127, 23);
-            this.TextBox_Birthdate.TabIndex = 10;
             // 
             // TextBox_City
             // 
@@ -309,11 +302,22 @@ namespace Contact_Tracing
             this.Label_Reminder1.TabIndex = 32;
             this.Label_Reminder1.Text = "Fill out the form correctly!";
             // 
+            // TextBox_Birthdate
+            // 
+            this.TextBox_Birthdate.CustomFormat = " ";
+            this.TextBox_Birthdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TextBox_Birthdate.Location = new System.Drawing.Point(192, 87);
+            this.TextBox_Birthdate.Name = "TextBox_Birthdate";
+            this.TextBox_Birthdate.Size = new System.Drawing.Size(149, 23);
+            this.TextBox_Birthdate.TabIndex = 34;
+            this.TextBox_Birthdate.ValueChanged += new System.EventHandler(this.PickBirthdate);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 321);
+            this.Controls.Add(this.TextBox_Birthdate);
             this.Controls.Add(this.Label_Reminder1);
             this.Controls.Add(this.Label_Reminder2);
             this.Controls.Add(this.TextBox_ContactNumber);
@@ -336,7 +340,6 @@ namespace Contact_Tracing
             this.Controls.Add(this.Label_LastName);
             this.Controls.Add(this.Button_Next);
             this.Controls.Add(this.TextBox_City);
-            this.Controls.Add(this.TextBox_Birthdate);
             this.Controls.Add(this.TextBox_Age);
             this.Controls.Add(this.RadioButton_Female);
             this.Controls.Add(this.RadioButton_Male);
@@ -358,7 +361,6 @@ namespace Contact_Tracing
         private System.Windows.Forms.RadioButton RadioButton_Male;
         private System.Windows.Forms.RadioButton RadioButton_Female;
         private System.Windows.Forms.TextBox TextBox_Age;
-        private System.Windows.Forms.TextBox TextBox_Birthdate;
         private System.Windows.Forms.TextBox TextBox_City;
         private System.Windows.Forms.Button Button_Next;
         private System.Windows.Forms.Label Label_LastName;
@@ -381,6 +383,7 @@ namespace Contact_Tracing
         private System.Windows.Forms.TextBox TextBox_ContactNumber;
         private System.Windows.Forms.Label Label_Reminder2;
         private System.Windows.Forms.Label Label_Reminder1;
+        private System.Windows.Forms.DateTimePicker TextBox_Birthdate;
     }
 }
 
