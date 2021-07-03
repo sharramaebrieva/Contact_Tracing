@@ -128,6 +128,7 @@ namespace Contact_Tracing
             // Button_Next
             // 
             this.Button_Next.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Button_Next.Enabled = false;
             this.Button_Next.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button_Next.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button_Next.Location = new System.Drawing.Point(388, 250);

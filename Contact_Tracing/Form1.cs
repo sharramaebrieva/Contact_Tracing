@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,18 @@ namespace Contact_Tracing
 {
     public partial class Form1 : Form
     {
+        string Name = "";
+        string Age = "";
+        string Birthdate = "";
+        string Gender;
+        string ContactNumber = "";
+        string Address = "";
+        string Summary = "";
+
+        StreamWriter FileLocation;
+        
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -19,15 +32,6 @@ namespace Contact_Tracing
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            string Name = TextBox_LastName.Text + ", " + TextBox_FirstName.Text + ", " + TextBox_MiddleName.Text;
-            string Age = TextBox_Age.Text;
-            string Birthdate = TextBox_Birthdate.Text;
-            string ContactNumber = TextBox_ContactNumber.Text;
-            string Address = TextBox_Street.Text + ", " + TextBox_Brgy.Text + ", " + TextBox_Municipality.Text + ", "
-                + TextBox_City.Text;
-
-            string Summary = "Name: " + Name + "\nAge: " + Age + "\nBirthdate: " + Birthdate + "\nGender: " + Gender
-                + "\nContact Number: " + ContactNumber + "\nCurrent Address: " + Address;
             
         }
 
@@ -37,22 +41,40 @@ namespace Contact_Tracing
 
 
        
-        string Gender;
+        
 
         public void ButtonClick_Save(object sender, EventArgs e)
         {
-            string Name = TextBox_LastName.Text + ", " + TextBox_FirstName.Text + ", " + TextBox_MiddleName.Text;
-            string Age = TextBox_Age.Text;
-            string Birthdate = TextBox_Birthdate.Text;
-            string ContactNumber = TextBox_ContactNumber.Text;
-            string Address = TextBox_Street.Text + ", " + TextBox_Brgy.Text + ", " + TextBox_Municipality.Text + ", "
+            Name = TextBox_LastName.Text + ", " + TextBox_FirstName.Text + ", " + TextBox_MiddleName.Text;
+            Age = TextBox_Age.Text;
+            Birthdate = TextBox_Birthdate.Text;
+            ContactNumber = TextBox_ContactNumber.Text;
+            Address = TextBox_Street.Text + ", " + TextBox_Brgy.Text + ", " + TextBox_Municipality.Text + ", "
                 + TextBox_City.Text;
 
-            string Summary = "Name: " + Name + "\nAge: " + Age + "\nBirthdate: " + Birthdate + "\nGender: " + Gender
+            Summary = "Name: " + Name + "\nAge: " + Age + "\nBirthdate: " + Birthdate + "\nGender: " + Gender
                 + "\nContact Number: " + ContactNumber + "\nCurrent Address: " + Address;
 
-            MessageBox.Show("Please check all your information!\n\n" + Summary + "\n\nIf all the information are " +
-                "correct, click OK then click Next. Thank You!");
+
+
+            if (TextBox_LastName.Text == "" || TextBox_FirstName.Text == ""
+                 || TextBox_Age.Text == "" || TextBox_Birthdate.Text == "" ||
+                 TextBox_ContactNumber.Text == "" || TextBox_Brgy.Text == ""
+                 || TextBox_Municipality.Text == "" && TextBox_City.Text == ""
+                 || Gender == "")
+            {
+                MessageBox.Show("Incomplete Information! \n\nClick OK and fill out all necessary information!");
+            }
+            else if (TextBox_LastName.Text != "" && TextBox_FirstName.Text != ""
+                 && TextBox_Age.Text != "" && TextBox_Birthdate.Text != "" &&
+                 TextBox_ContactNumber.Text != "" && TextBox_Brgy.Text != ""
+                 && TextBox_Municipality.Text != "" && TextBox_City.Text != ""
+                 && Gender != "")
+            {
+                MessageBox.Show("Please check all your information!\n\n" + Summary + "\n\nIf all the information are "
+                    + "correct, click OK then click Next. Thank You!");
+                Button_Next.Enabled = true;
+            }
         }
 
         private void RadioButton_Male_CheckedChanged(object sender, EventArgs e)
@@ -74,6 +96,11 @@ namespace Contact_Tracing
             }
             f2.Show();
             this.Hide();
+
+            FileLocation = File.AppendText(@"C:\Users\LENOVO\Desktop\Contact-Tracing-Info.txt");
+            FileLocation.WriteLine("CONTACT TRACING FOR COVID-19\nPersonal Information\n");
+            FileLocation.WriteLine(Summary + "\n");
+            FileLocation.Close();
         }
     }
 }

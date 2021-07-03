@@ -17,7 +17,7 @@ namespace Contact_Tracing
 
         public void Form2_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Question1_TextChanged(object sender, EventArgs e)
@@ -84,6 +84,11 @@ namespace Contact_Tracing
             string No3 = RadioButton_3No.Checked.ToString();
             string No4 = RadioButton_4No.Checked.ToString();
             string No5 = RadioButton_5No.Checked.ToString();
+
+            {
+                if (No1 == No2)
+                    MessageBox.Show("Yes");
+            }
 
         }
     }
