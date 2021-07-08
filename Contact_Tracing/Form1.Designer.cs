@@ -57,6 +57,11 @@ namespace Contact_Tracing
             this.Label_Reminder2 = new System.Windows.Forms.Label();
             this.Label_Reminder1 = new System.Windows.Forms.Label();
             this.TextBox_Birthdate = new System.Windows.Forms.DateTimePicker();
+            this.Label_DateToday = new System.Windows.Forms.Label();
+            this.TextBox_DateToday = new System.Windows.Forms.DateTimePicker();
+            this.Label_Email = new System.Windows.Forms.Label();
+            this.TextBox_Email = new System.Windows.Forms.TextBox();
+            this.Button_Access = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Button_Save
@@ -64,7 +69,7 @@ namespace Contact_Tracing
             this.Button_Save.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button_Save.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Button_Save.Location = new System.Drawing.Point(226, 250);
+            this.Button_Save.Location = new System.Drawing.Point(223, 291);
             this.Button_Save.Name = "Button_Save";
             this.Button_Save.Size = new System.Drawing.Size(130, 50);
             this.Button_Save.TabIndex = 0;
@@ -74,7 +79,7 @@ namespace Contact_Tracing
             // 
             // TextBox_LastName
             // 
-            this.TextBox_LastName.Location = new System.Drawing.Point(88, 49);
+            this.TextBox_LastName.Location = new System.Drawing.Point(85, 90);
             this.TextBox_LastName.Name = "TextBox_LastName";
             this.TextBox_LastName.Size = new System.Drawing.Size(155, 23);
             this.TextBox_LastName.TabIndex = 1;
@@ -83,7 +88,7 @@ namespace Contact_Tracing
             // RadioButton_Male
             // 
             this.RadioButton_Male.AutoSize = true;
-            this.RadioButton_Male.Location = new System.Drawing.Point(398, 88);
+            this.RadioButton_Male.Location = new System.Drawing.Point(395, 129);
             this.RadioButton_Male.Name = "RadioButton_Male";
             this.RadioButton_Male.Size = new System.Drawing.Size(51, 19);
             this.RadioButton_Male.TabIndex = 6;
@@ -95,7 +100,7 @@ namespace Contact_Tracing
             // RadioButton_Female
             // 
             this.RadioButton_Female.AutoSize = true;
-            this.RadioButton_Female.Location = new System.Drawing.Point(455, 88);
+            this.RadioButton_Female.Location = new System.Drawing.Point(452, 129);
             this.RadioButton_Female.Name = "RadioButton_Female";
             this.RadioButton_Female.Size = new System.Drawing.Size(63, 19);
             this.RadioButton_Female.TabIndex = 8;
@@ -106,7 +111,7 @@ namespace Contact_Tracing
             // 
             // TextBox_Age
             // 
-            this.TextBox_Age.Location = new System.Drawing.Point(53, 87);
+            this.TextBox_Age.Location = new System.Drawing.Point(50, 128);
             this.TextBox_Age.Name = "TextBox_Age";
             this.TextBox_Age.Size = new System.Drawing.Size(59, 23);
             this.TextBox_Age.TabIndex = 9;
@@ -114,7 +119,7 @@ namespace Contact_Tracing
             // 
             // TextBox_City
             // 
-            this.TextBox_City.Location = new System.Drawing.Point(118, 123);
+            this.TextBox_City.Location = new System.Drawing.Point(115, 164);
             this.TextBox_City.Name = "TextBox_City";
             this.TextBox_City.Size = new System.Drawing.Size(155, 23);
             this.TextBox_City.TabIndex = 11;
@@ -125,7 +130,7 @@ namespace Contact_Tracing
             this.Button_Next.Enabled = false;
             this.Button_Next.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button_Next.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Button_Next.Location = new System.Drawing.Point(388, 250);
+            this.Button_Next.Location = new System.Drawing.Point(385, 291);
             this.Button_Next.Name = "Button_Next";
             this.Button_Next.Size = new System.Drawing.Size(130, 50);
             this.Button_Next.TabIndex = 12;
@@ -136,7 +141,7 @@ namespace Contact_Tracing
             // Label_LastName
             // 
             this.Label_LastName.AutoSize = true;
-            this.Label_LastName.Location = new System.Drawing.Point(19, 52);
+            this.Label_LastName.Location = new System.Drawing.Point(16, 93);
             this.Label_LastName.Name = "Label_LastName";
             this.Label_LastName.Size = new System.Drawing.Size(63, 15);
             this.Label_LastName.TabIndex = 13;
@@ -145,7 +150,7 @@ namespace Contact_Tracing
             // Label_Gender
             // 
             this.Label_Gender.AutoSize = true;
-            this.Label_Gender.Location = new System.Drawing.Point(347, 90);
+            this.Label_Gender.Location = new System.Drawing.Point(344, 131);
             this.Label_Gender.Name = "Label_Gender";
             this.Label_Gender.Size = new System.Drawing.Size(45, 15);
             this.Label_Gender.TabIndex = 14;
@@ -154,7 +159,7 @@ namespace Contact_Tracing
             // Label_Birthdate
             // 
             this.Label_Birthdate.AutoSize = true;
-            this.Label_Birthdate.Location = new System.Drawing.Point(131, 90);
+            this.Label_Birthdate.Location = new System.Drawing.Point(128, 131);
             this.Label_Birthdate.Name = "Label_Birthdate";
             this.Label_Birthdate.Size = new System.Drawing.Size(55, 15);
             this.Label_Birthdate.TabIndex = 15;
@@ -163,7 +168,7 @@ namespace Contact_Tracing
             // Label_Age
             // 
             this.Label_Age.AutoSize = true;
-            this.Label_Age.Location = new System.Drawing.Point(19, 90);
+            this.Label_Age.Location = new System.Drawing.Point(16, 131);
             this.Label_Age.Name = "Label_Age";
             this.Label_Age.Size = new System.Drawing.Size(28, 15);
             this.Label_Age.TabIndex = 16;
@@ -172,7 +177,7 @@ namespace Contact_Tracing
             // Label_MiddleName
             // 
             this.Label_MiddleName.AutoSize = true;
-            this.Label_MiddleName.Location = new System.Drawing.Point(533, 52);
+            this.Label_MiddleName.Location = new System.Drawing.Point(530, 93);
             this.Label_MiddleName.Name = "Label_MiddleName";
             this.Label_MiddleName.Size = new System.Drawing.Size(79, 15);
             this.Label_MiddleName.TabIndex = 17;
@@ -181,7 +186,7 @@ namespace Contact_Tracing
             // Label_FirstName
             // 
             this.Label_FirstName.AutoSize = true;
-            this.Label_FirstName.Location = new System.Drawing.Point(277, 52);
+            this.Label_FirstName.Location = new System.Drawing.Point(274, 93);
             this.Label_FirstName.Name = "Label_FirstName";
             this.Label_FirstName.Size = new System.Drawing.Size(64, 15);
             this.Label_FirstName.TabIndex = 18;
@@ -189,14 +194,14 @@ namespace Contact_Tracing
             // 
             // TextBox_MiddleName
             // 
-            this.TextBox_MiddleName.Location = new System.Drawing.Point(618, 49);
+            this.TextBox_MiddleName.Location = new System.Drawing.Point(615, 90);
             this.TextBox_MiddleName.Name = "TextBox_MiddleName";
             this.TextBox_MiddleName.Size = new System.Drawing.Size(155, 23);
             this.TextBox_MiddleName.TabIndex = 19;
             // 
             // TextBox_FirstName
             // 
-            this.TextBox_FirstName.Location = new System.Drawing.Point(347, 49);
+            this.TextBox_FirstName.Location = new System.Drawing.Point(344, 90);
             this.TextBox_FirstName.Name = "TextBox_FirstName";
             this.TextBox_FirstName.Size = new System.Drawing.Size(155, 23);
             this.TextBox_FirstName.TabIndex = 20;
@@ -204,7 +209,7 @@ namespace Contact_Tracing
             // Label_Brgy
             // 
             this.Label_Brgy.AutoSize = true;
-            this.Label_Brgy.Location = new System.Drawing.Point(486, 149);
+            this.Label_Brgy.Location = new System.Drawing.Point(483, 190);
             this.Label_Brgy.Name = "Label_Brgy";
             this.Label_Brgy.Size = new System.Drawing.Size(56, 15);
             this.Label_Brgy.TabIndex = 21;
@@ -213,7 +218,7 @@ namespace Contact_Tracing
             // Label_Municipality
             // 
             this.Label_Municipality.AutoSize = true;
-            this.Label_Municipality.Location = new System.Drawing.Point(317, 149);
+            this.Label_Municipality.Location = new System.Drawing.Point(314, 190);
             this.Label_Municipality.Name = "Label_Municipality";
             this.Label_Municipality.Size = new System.Drawing.Size(73, 15);
             this.Label_Municipality.TabIndex = 22;
@@ -222,7 +227,7 @@ namespace Contact_Tracing
             // Label_City
             // 
             this.Label_City.AutoSize = true;
-            this.Label_City.Location = new System.Drawing.Point(155, 149);
+            this.Label_City.Location = new System.Drawing.Point(152, 190);
             this.Label_City.Name = "Label_City";
             this.Label_City.Size = new System.Drawing.Size(79, 15);
             this.Label_City.TabIndex = 23;
@@ -231,7 +236,7 @@ namespace Contact_Tracing
             // Label_Address
             // 
             this.Label_Address.AutoSize = true;
-            this.Label_Address.Location = new System.Drawing.Point(20, 126);
+            this.Label_Address.Location = new System.Drawing.Point(17, 167);
             this.Label_Address.Name = "Label_Address";
             this.Label_Address.Size = new System.Drawing.Size(92, 15);
             this.Label_Address.TabIndex = 24;
@@ -239,21 +244,21 @@ namespace Contact_Tracing
             // 
             // TextBox_Street
             // 
-            this.TextBox_Street.Location = new System.Drawing.Point(599, 123);
+            this.TextBox_Street.Location = new System.Drawing.Point(596, 164);
             this.TextBox_Street.Name = "TextBox_Street";
             this.TextBox_Street.Size = new System.Drawing.Size(174, 23);
             this.TextBox_Street.TabIndex = 25;
             // 
             // TextBox_Municipality
             // 
-            this.TextBox_Municipality.Location = new System.Drawing.Point(277, 123);
+            this.TextBox_Municipality.Location = new System.Drawing.Point(274, 164);
             this.TextBox_Municipality.Name = "TextBox_Municipality";
             this.TextBox_Municipality.Size = new System.Drawing.Size(155, 23);
             this.TextBox_Municipality.TabIndex = 26;
             // 
             // TextBox_Brgy
             // 
-            this.TextBox_Brgy.Location = new System.Drawing.Point(438, 123);
+            this.TextBox_Brgy.Location = new System.Drawing.Point(435, 164);
             this.TextBox_Brgy.Name = "TextBox_Brgy";
             this.TextBox_Brgy.Size = new System.Drawing.Size(155, 23);
             this.TextBox_Brgy.TabIndex = 27;
@@ -261,7 +266,7 @@ namespace Contact_Tracing
             // Label_Street
             // 
             this.Label_Street.AutoSize = true;
-            this.Label_Street.Location = new System.Drawing.Point(642, 149);
+            this.Label_Street.Location = new System.Drawing.Point(639, 190);
             this.Label_Street.Name = "Label_Street";
             this.Label_Street.Size = new System.Drawing.Size(86, 15);
             this.Label_Street.TabIndex = 28;
@@ -270,7 +275,7 @@ namespace Contact_Tracing
             // Label_ContactNumber
             // 
             this.Label_ContactNumber.AutoSize = true;
-            this.Label_ContactNumber.Location = new System.Drawing.Point(548, 90);
+            this.Label_ContactNumber.Location = new System.Drawing.Point(545, 131);
             this.Label_ContactNumber.Name = "Label_ContactNumber";
             this.Label_ContactNumber.Size = new System.Drawing.Size(96, 15);
             this.Label_ContactNumber.TabIndex = 29;
@@ -278,7 +283,7 @@ namespace Contact_Tracing
             // 
             // TextBox_ContactNumber
             // 
-            this.TextBox_ContactNumber.Location = new System.Drawing.Point(646, 87);
+            this.TextBox_ContactNumber.Location = new System.Drawing.Point(643, 128);
             this.TextBox_ContactNumber.Name = "TextBox_ContactNumber";
             this.TextBox_ContactNumber.Size = new System.Drawing.Size(127, 23);
             this.TextBox_ContactNumber.TabIndex = 30;
@@ -288,7 +293,7 @@ namespace Contact_Tracing
             // 
             this.Label_Reminder2.AutoSize = true;
             this.Label_Reminder2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Label_Reminder2.Location = new System.Drawing.Point(17, 195);
+            this.Label_Reminder2.Location = new System.Drawing.Point(14, 236);
             this.Label_Reminder2.Name = "Label_Reminder2";
             this.Label_Reminder2.Size = new System.Drawing.Size(399, 21);
             this.Label_Reminder2.TabIndex = 31;
@@ -308,17 +313,67 @@ namespace Contact_Tracing
             // 
             this.TextBox_Birthdate.CustomFormat = " ";
             this.TextBox_Birthdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.TextBox_Birthdate.Location = new System.Drawing.Point(192, 87);
+            this.TextBox_Birthdate.Location = new System.Drawing.Point(189, 128);
             this.TextBox_Birthdate.Name = "TextBox_Birthdate";
             this.TextBox_Birthdate.Size = new System.Drawing.Size(149, 23);
             this.TextBox_Birthdate.TabIndex = 34;
             this.TextBox_Birthdate.ValueChanged += new System.EventHandler(this.PickBirthdate);
             // 
+            // Label_DateToday
+            // 
+            this.Label_DateToday.AutoSize = true;
+            this.Label_DateToday.Location = new System.Drawing.Point(14, 57);
+            this.Label_DateToday.Name = "Label_DateToday";
+            this.Label_DateToday.Size = new System.Drawing.Size(65, 15);
+            this.Label_DateToday.TabIndex = 35;
+            this.Label_DateToday.Text = "Data Today";
+            // 
+            // TextBox_DateToday
+            // 
+            this.TextBox_DateToday.CustomFormat = " ";
+            this.TextBox_DateToday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TextBox_DateToday.Location = new System.Drawing.Point(85, 51);
+            this.TextBox_DateToday.Name = "TextBox_DateToday";
+            this.TextBox_DateToday.Size = new System.Drawing.Size(155, 23);
+            this.TextBox_DateToday.TabIndex = 36;
+            this.TextBox_DateToday.ValueChanged += new System.EventHandler(this.TextBox_DateToday_ValueChanged);
+            // 
+            // Label_Email
+            // 
+            this.Label_Email.AutoSize = true;
+            this.Label_Email.Location = new System.Drawing.Point(274, 54);
+            this.Label_Email.Name = "Label_Email";
+            this.Label_Email.Size = new System.Drawing.Size(81, 15);
+            this.Label_Email.TabIndex = 37;
+            this.Label_Email.Text = "Email Address";
+            // 
+            // TextBox_Email
+            // 
+            this.TextBox_Email.Location = new System.Drawing.Point(361, 49);
+            this.TextBox_Email.Name = "TextBox_Email";
+            this.TextBox_Email.Size = new System.Drawing.Size(229, 23);
+            this.TextBox_Email.TabIndex = 38;
+            // 
+            // Button_Access
+            // 
+            this.Button_Access.Location = new System.Drawing.Point(550, 261);
+            this.Button_Access.Name = "Button_Access";
+            this.Button_Access.Size = new System.Drawing.Size(130, 23);
+            this.Button_Access.TabIndex = 39;
+            this.Button_Access.Text = "Access Records";
+            this.Button_Access.UseVisualStyleBackColor = true;
+            this.Button_Access.Click += new System.EventHandler(this.ButtonClick_Access);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 321);
+            this.ClientSize = new System.Drawing.Size(796, 394);
+            this.Controls.Add(this.Button_Access);
+            this.Controls.Add(this.TextBox_Email);
+            this.Controls.Add(this.Label_Email);
+            this.Controls.Add(this.TextBox_DateToday);
+            this.Controls.Add(this.Label_DateToday);
             this.Controls.Add(this.TextBox_Birthdate);
             this.Controls.Add(this.Label_Reminder1);
             this.Controls.Add(this.Label_Reminder2);
@@ -386,6 +441,11 @@ namespace Contact_Tracing
         private System.Windows.Forms.Label Label_Reminder2;
         private System.Windows.Forms.Label Label_Reminder1;
         private System.Windows.Forms.DateTimePicker TextBox_Birthdate;
+        private System.Windows.Forms.Label Label_DateToday;
+        private System.Windows.Forms.DateTimePicker TextBox_DateToday;
+        private System.Windows.Forms.Label Label_Email;
+        private System.Windows.Forms.TextBox TextBox_Email;
+        private System.Windows.Forms.Button Button_Access;
     }
 }
 

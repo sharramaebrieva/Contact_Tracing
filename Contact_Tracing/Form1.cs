@@ -18,11 +18,12 @@ namespace Contact_Tracing
         string Birthdate = "";
         string Gender;
         string ContactNumber = "";
+        string Email = "";
         string Address = "";
         string Summary = "";
 
-        StreamWriter FileLocation;
-        
+        StreamWriter Records;
+        StreamReader AccessFiles;
         
 
         public Form1()
@@ -49,17 +50,18 @@ namespace Contact_Tracing
             Age = TextBox_Age.Text;
             Birthdate = TextBox_Birthdate.Text;
             ContactNumber = TextBox_ContactNumber.Text;
+            Email = TextBox_Email.Text;
             Address = TextBox_Street.Text + ", " + TextBox_Brgy.Text + ", " + TextBox_Municipality.Text + ", "
                 + TextBox_City.Text;
 
             Summary = "Name: " + Name + "\nAge: " + Age + "\nBirthdate: " + Birthdate + "\nGender: " + Gender
-                + "\nContact Number: " + ContactNumber + "\nCurrent Address: " + Address;
+                + "\nContact Number: " + ContactNumber + "\nEmail Address: " + Email + "\nCurrent Address: " + Address;
 
 
 
             if (TextBox_LastName.Text == "" || TextBox_FirstName.Text == ""
                  || TextBox_Age.Text == "" || TextBox_Birthdate.Text == "" ||
-                 TextBox_ContactNumber.Text == "" || TextBox_Brgy.Text == ""
+                 TextBox_ContactNumber.Text == "" || TextBox_Email.Text == "" || TextBox_Brgy.Text == ""
                  || TextBox_Municipality.Text == "" && TextBox_City.Text == ""
                  || Gender == "")
             {
@@ -67,7 +69,7 @@ namespace Contact_Tracing
             }
             else if (TextBox_LastName.Text != "" && TextBox_FirstName.Text != ""
                  && TextBox_Age.Text != "" && TextBox_Birthdate.Text != "" &&
-                 TextBox_ContactNumber.Text != "" && TextBox_Brgy.Text != ""
+                 TextBox_ContactNumber.Text != "" && TextBox_Email.Text != "" && TextBox_Brgy.Text != ""
                  && TextBox_Municipality.Text != "" && TextBox_City.Text != ""
                  && Gender != "" && TextBox_ContactNumber.Text.Length == 11)
             {
@@ -77,7 +79,7 @@ namespace Contact_Tracing
             }
             else if (TextBox_LastName.Text != "" && TextBox_FirstName.Text != ""
                  && TextBox_Age.Text != "" && TextBox_Birthdate.Text != "" &&
-                 TextBox_ContactNumber.Text != "" && TextBox_Brgy.Text != ""
+                 TextBox_ContactNumber.Text != "" && TextBox_Email.Text != "" && TextBox_Brgy.Text != ""
                  && TextBox_Municipality.Text != "" && TextBox_City.Text != ""
                  && Gender != "" && TextBox_ContactNumber.Text.Length != 11)
             {
@@ -105,10 +107,11 @@ namespace Contact_Tracing
             f2.Show();
             this.Hide();
 
-            FileLocation = File.AppendText(@"C:\Users\LENOVO\Desktop\trial.txt");
-            FileLocation.WriteLine("CONTACT TRACING FOR COVID-19\nPersonal Information\n");
-            FileLocation.WriteLine(Summary + "\n");
-            FileLocation.Close();
+            Records = File.AppendText(@"C:\Users\LENOVO\Desktop\trial.txt");
+            Records.WriteLine("CONTACT TRACING FOR COVID-19\nPersonal Information" + TextBox_DateToday.Text
+                + "\n");
+            Records.WriteLine(Summary + "\n");
+            Records.Close();
         }
 
         private void PickBirthdate(object sender, EventArgs e)
@@ -142,6 +145,23 @@ namespace Contact_Tracing
                 }
             
             
+        }
+
+
+        private void TextBox_DateToday_ValueChanged(object sender, EventArgs e)
+        {
+            TextBox_DateToday.CustomFormat = "MMMM dd, yyyy";
+        }
+
+        private void ButtonClick_Access(object sender, EventArgs e)
+        {
+            ReadForFile();
+        }
+
+        public void ReadForFile()
+        {
+            StreamReader reader = new StreamReader(@"C:\Users\LENOVO\Desktop\trial.txt");
+            reader.ReadToEnd();
         }
     }
 }

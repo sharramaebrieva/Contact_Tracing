@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -10,6 +11,9 @@ namespace Contact_Tracing
 {
     public partial class Form2 : Form
     {
+        StreamWriter Records;
+        StreamReader AccessFiles;
+
         string Answer1 = "";
         string Answer2 = "";
         string Answer3 = "";
@@ -21,20 +25,13 @@ namespace Contact_Tracing
         string Result3 = "";
         string Result4 = "";
         string Result5 = "";
+        string City = "";
 
         string Summary = "";
 
-        string q1_1 = "";
-        string q1_2 = "";
-        string q1_3 = "";
-        string q1_4 = "";
-        string q1_5 = "";
-        string q1_6 = "";
-        string q1_7 = "";
-        string q1_8 = "";
-        string q1_9 = "";
-
         string SummarySymptoms = "";
+        string symptom1 = "";
+        string symptom2 = "";
 
         public Form2()
         {
@@ -43,7 +40,7 @@ namespace Contact_Tracing
 
         public void Form2_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Question1_TextChanged(object sender, EventArgs e)
@@ -51,67 +48,12 @@ namespace Contact_Tracing
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
         private void Button_Save2_Click(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                q1_1 = checkBox1.Text;
-            }
-
-            if (checkBox2.Checked)
-            {
-                q1_2 = checkBox2.Text;
-            }
-
-            if (checkBox3.Checked)
-            {
-                q1_3 = checkBox3.Text;
-            }
-
-            if (checkBox4.Checked)
-            {
-                q1_4 = checkBox4.Text;
-            }
-
-            if (checkBox5.Checked)
-            {
-                q1_5 = checkBox5.Text;
-            }
-
-            if (checkBox6.Checked)
-            {
-                q1_6 = checkBox6.Text;
-            }
-
-            if (checkBox7.Checked)
-            {
-                q1_7 = checkBox7.Text;
-            }
-
-            if (checkBox8.Checked)
-            {
-                q1_8 = checkBox8.Text;
-            }
-
-            if (checkBox9.Checked)
-            {
-                q1_9 = checkBox9.Text;
-            }
+            City = TextBox_SpecifyCity.Text;
 
             Summary = Result1 + "\n\n" + Result2 + "\n\n" + Result3 + "\n\n" + Result4 + "\n\n" + Result5;
-            SummarySymptoms = q1_1 + "\n" + q1_2 + "\n" + q1_3 + "\n" + q1_4 + "\n" + q1_5 + "\n" + q1_6 + "\n" +
-                q1_7 + "\n" + q1_8 + "\n" + q1_9;
+
 
             if (Answer1 == "" || Answer2 == "" || Answer3 == "" || Answer4 == "" || Answer5 == "")
             {
@@ -121,6 +63,7 @@ namespace Contact_Tracing
             {
                 MessageBox.Show("Kindly check all your answers and information\n\n" + Summary + "\n\n" + "Click" +
                     "OK, then Submit.");
+                Button_Submit.Enabled = true;
             }
             else if (Answer1 == "No" && Answer2 != "" && Answer3 != "" && Answer4 != "" && Answer5 == "Yes" &&
                 TextBox_SpecifyCity.Text == "")
@@ -145,41 +88,39 @@ namespace Contact_Tracing
             {
                 MessageBox.Show("Kindly check all your answers and information\n\n" + Summary + "\n\n" + "Click" +
                     "OK, then Submit.");
+                Button_Submit.Enabled = true;
             }
             else if (Answer1 == "No" && Answer2 != "" && Answer3 != "" && Answer4 != "" && Answer5 == "Yes"
                 && TextBox_SpecifyCity.Text != "")
             {
                 MessageBox.Show("Kindly check all your answers and information\n\n" + Summary + "\n\n" + "Click" +
                     "OK, then Submit.");
+                Button_Submit.Enabled = true;
             }
-            else if (Answer1 == "Yes" && Answer2 != "" && Answer3 != "" && Answer4 != "" && Answer5 == "Yes"
-                && SummarySymptoms != "" && TextBox_SpecifyCity.Text != "")
+            else if (Answer1 == "Yes" && Answer2 != "" && Answer3 != "" && Answer4 != "" && Answer5 == "No"
+                && SummarySymptoms != "")
             {
                 MessageBox.Show("Kindly check all your answers and information\n\n" + Summary + "\n\n" + "Click" +
                     "OK, then Submit.");
+                Button_Submit.Enabled = true;
             }
         }
         private void RadioButton_1Yes_CheckedChanged(object sender, EventArgs e)
         {
             Answer1 = "Yes";
-            GroupBox_Symptoms.Visible = true;
+            checkBox1.Enabled = true;
+            checkBox2.Enabled = true;
+
+
+            SummarySymptoms = symptom1 + symptom2;
             Result1 = "Experienced or did have any of the symptoms for the past 14 days:\n" + SummarySymptoms;
         }
 
         private void RadioButton_1No_CheckedChanged(object sender, EventArgs e)
         {
             Answer1 = "No";
-            GroupBox_Symptoms.Visible = false;
-            SummarySymptoms = "";
-            checkBox1.Checked = false;
-            checkBox2.Checked = false;
-            checkBox3.Checked = false;
-            checkBox4.Checked = false;
-            checkBox5.Checked = false;
-            checkBox6.Checked = false;
-            checkBox7.Checked = false;
-            checkBox8.Checked = false;
-            checkBox9.Checked = false;
+            checkBox1.Enabled = false;
+            checkBox2.Enabled = false;
             Result1 = "Did not experience or did not have any of the symptoms for the past 14 days.";
         }
 
@@ -227,70 +168,59 @@ namespace Contact_Tracing
         private void RadioButton_5Yes_CheckedChanged(object sender, EventArgs e)
         {
             Answer5 = "Yes";
-            Result5 = "Traveled to " + TextBox_SpecifyCity.Text.ToString() + ", which is outside the current city / " +
-                "municipality of residence";
             TextBox_SpecifyCity.ReadOnly = false;
+            Result5 = "Traveled to " + City + ", which is outside the current city / " +
+                "municipality of residence.";
         }
 
         private void RadioButton_5No_CheckedChanged(object sender, EventArgs e)
         {
             Answer5 = "No";
-            Result5 = "Did not travel outside the current city / municipality of residence";
+            Result5 = "Did not travel outside the current city / municipality of residence.";
             TextBox_SpecifyCity.Text = "";
             TextBox_SpecifyCity.ReadOnly = true;
         }
 
+        private void Form2_Load_1(object sender, EventArgs e)
+        {
 
+        }
 
+        private void ButtonClick_Submit(object sender, EventArgs e)
+        {
+            string Reference = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz";
+            var Length = new char[10];
+            Random ReferenceNumber = new Random();
+            
+            for (int i = 0; i < Length.Length; i++)
+            {
+                Length[i] = Reference[ReferenceNumber.Next(Reference.Length)];
+            }
+            string NewReferenceNumber = new String(Length);
+            MessageBox.Show("Please take note of your Reference Number!\n" + NewReferenceNumber);
 
+            Records = File.AppendText(@"C:\Users\LENOVO\Desktop\trial.txt");
+            Records.WriteLine(Summary + "\n");
+            Records.WriteLine("Reference Number: " + NewReferenceNumber);
+            Records.Close();
+        }
 
-
+        private void ButtonClick_Access(object sender, EventArgs e)
+        {
+            AccessFiles = File.OpenText(@"C:\Users\LENOVO\Desktop\trial.txt");
+            AccessFiles.Close();
+        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            
+            checkBox1.Checked = true;
+            symptom1 = checkBox1.Text; 
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            q1_2 = checkBox2.Text;
+            checkBox2.Checked = true;
+            symptom2 = checkBox2.Text;
         }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            q1_3 = checkBox3.Text;
-        }
-
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-            q1_4 = checkBox4.Text;
-        }
-
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
-        {
-            q1_5 = checkBox5.Text;
-        }
-
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
-        {
-            q1_6 = checkBox6.Text;
-        }
-
-        private void checkBox7_CheckedChanged(object sender, EventArgs e)
-        {
-            q1_7 = checkBox7.Text;
-        }
-
-        private void checkBox8_CheckedChanged(object sender, EventArgs e)
-        {
-            q1_8 = checkBox8.Text;
-        }
-
-        private void checkBox9_CheckedChanged(object sender, EventArgs e)
-        {
-            q1_9 = checkBox9.Text;
-        }
-
-        
     }
 }
