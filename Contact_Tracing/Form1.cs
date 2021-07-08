@@ -13,7 +13,7 @@ namespace Contact_Tracing
 {
     public partial class Form1 : Form
     {
-        string Name = "";
+        string FullName = "";
         string Age = "";
         string Birthdate = "";
         string Gender;
@@ -23,30 +23,55 @@ namespace Contact_Tracing
         string Summary = "";
 
         StreamWriter Records;
-        StreamReader AccessFiles;
         
-
         public Form1()
         {
             InitializeComponent();
         }
 
-        public void Form1_Load(object sender, EventArgs e)
+        private void RadioButton_Male_CheckedChanged(object sender, EventArgs e)
         {
-            
+            Gender = "Male";
         }
 
-        private void TextBoxName_TextChanged(object sender, EventArgs e)
+        private void RadioButton_Female_CheckedChanged(object sender, EventArgs e)
         {
+            Gender = "Female";
         }
 
+        private void TextBox_DateToday_ValueChanged(object sender, EventArgs e)
+        {
+            TextBox_DateToday.CustomFormat = "MMMM dd, yyyy";
+        }
 
-       
-        
+        private void PickBirthdate(object sender, EventArgs e)
+        {
+            TextBox_Birthdate.CustomFormat = "MMMM dd, yyyy";
+        }
+
+        private void TextBox_Age_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char value = e.KeyChar;
+
+            if (!Char.IsDigit(value) && value != (char)Keys.Back && value != (char)Keys.Delete)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TextBox_ContactNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char value = e.KeyChar;
+
+            if (!Char.IsDigit(value) && value != (char)Keys.Back && value != (char)Keys.Delete)
+            {
+                e.Handled = true;
+            }
+        }
 
         public void ButtonClick_Save(object sender, EventArgs e)
         {
-            Name = TextBox_LastName.Text + ", " + TextBox_FirstName.Text + ", " + TextBox_MiddleName.Text;
+            FullName = TextBox_LastName.Text + ", " + TextBox_FirstName.Text + ", " + TextBox_MiddleName.Text;
             Age = TextBox_Age.Text;
             Birthdate = TextBox_Birthdate.Text;
             ContactNumber = TextBox_ContactNumber.Text;
@@ -54,10 +79,8 @@ namespace Contact_Tracing
             Address = TextBox_Street.Text + ", " + TextBox_Brgy.Text + ", " + TextBox_Municipality.Text + ", "
                 + TextBox_City.Text;
 
-            Summary = "Name: " + Name + "\nAge: " + Age + "\nBirthdate: " + Birthdate + "\nGender: " + Gender
+            Summary = "Name: " + FullName + "\nAge: " + Age + "\nBirthdate: " + Birthdate + "\nGender: " + Gender
                 + "\nContact Number: " + ContactNumber + "\nEmail Address: " + Email + "\nCurrent Address: " + Address;
-
-
 
             if (TextBox_LastName.Text == "" || TextBox_FirstName.Text == ""
                  || TextBox_Age.Text == "" || TextBox_Birthdate.Text == "" ||
@@ -87,16 +110,6 @@ namespace Contact_Tracing
             }
         }
 
-        private void RadioButton_Male_CheckedChanged(object sender, EventArgs e)
-        {
-            Gender = "Male";
-        }
-
-        private void RadioButton_Female_CheckedChanged(object sender, EventArgs e)
-        {
-            Gender = "Female";
-        }
-
         private void ButtonClick_Next(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
@@ -107,61 +120,10 @@ namespace Contact_Tracing
             f2.Show();
             this.Hide();
 
-            Records = File.AppendText(@"C:\Users\LENOVO\Desktop\trial.txt");
-            Records.WriteLine("CONTACT TRACING FOR COVID-19\nPersonal Information" + TextBox_DateToday.Text
-                + "\n");
+            Records = File.AppendText(@"C:\Users\LENOVO\Desktop\Contact-Tracing-Info.txt");
+            Records.WriteLine("CONTACT TRACING FOR COVID-19" + TextBox_DateToday.Text + "\nPersonal Information\n");
             Records.WriteLine(Summary + "\n");
             Records.Close();
-        }
-
-        private void PickBirthdate(object sender, EventArgs e)
-        {
-            TextBox_Birthdate.CustomFormat = "MMMM dd, yyyy";
-        }
-
-        private void TextBox_Age_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char value = e.KeyChar;
-
-            if (!Char.IsDigit(value) && value != (char) Keys.Back && value != (char) Keys.Delete)
-            {
-                e.Handled = true;
-            }
-        }
-
-        
-
-        private void TextBox_ContactNumber_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char value = e.KeyChar;
-            if (TextBox_ContactNumber.Text.Length >= 11)
-                if (!Char.IsDigit(value) && value != (char)Keys.Back && value != (char)Keys.Delete)
-                {
-                    e.Handled = true;
-                }
-                else
-                { 
-                    MessageBox.Show("Please enter your 11-digit Mobile Number!");
-                }
-            
-            
-        }
-
-
-        private void TextBox_DateToday_ValueChanged(object sender, EventArgs e)
-        {
-            TextBox_DateToday.CustomFormat = "MMMM dd, yyyy";
-        }
-
-        private void ButtonClick_Access(object sender, EventArgs e)
-        {
-            ReadForFile();
-        }
-
-        public void ReadForFile()
-        {
-            StreamReader reader = new StreamReader(@"C:\Users\LENOVO\Desktop\trial.txt");
-            reader.ReadToEnd();
         }
     }
 }

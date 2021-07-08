@@ -52,7 +52,6 @@ namespace Contact_Tracing
             this.RadioButton_5Yes = new System.Windows.Forms.RadioButton();
             this.Button_Save2 = new System.Windows.Forms.Button();
             this.Button_Submit = new System.Windows.Forms.Button();
-            this.Button_AccessFile = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -80,7 +79,7 @@ namespace Contact_Tracing
             // 
             // Label_Question2
             // 
-            this.Label_Question2.Location = new System.Drawing.Point(12, 332);
+            this.Label_Question2.Location = new System.Drawing.Point(12, 322);
             this.Label_Question2.Name = "Label_Question2";
             this.Label_Question2.Size = new System.Drawing.Size(395, 50);
             this.Label_Question2.TabIndex = 2;
@@ -160,7 +159,7 @@ namespace Contact_Tracing
             // 
             this.GroupBox_Question2.Controls.Add(this.RadioButton_2No);
             this.GroupBox_Question2.Controls.Add(this.RadioButton_2Yes);
-            this.GroupBox_Question2.Location = new System.Drawing.Point(430, 318);
+            this.GroupBox_Question2.Location = new System.Drawing.Point(430, 308);
             this.GroupBox_Question2.Name = "GroupBox_Question2";
             this.GroupBox_Question2.Size = new System.Drawing.Size(147, 54);
             this.GroupBox_Question2.TabIndex = 9;
@@ -316,42 +315,30 @@ namespace Contact_Tracing
             this.Button_Submit.UseVisualStyleBackColor = false;
             this.Button_Submit.Click += new System.EventHandler(this.ButtonClick_Submit);
             // 
-            // Button_AccessFile
-            // 
-            this.Button_AccessFile.Location = new System.Drawing.Point(12, 10);
-            this.Button_AccessFile.Name = "Button_AccessFile";
-            this.Button_AccessFile.Size = new System.Drawing.Size(118, 23);
-            this.Button_AccessFile.TabIndex = 12;
-            this.Button_AccessFile.Text = "Access Records";
-            this.Button_AccessFile.UseVisualStyleBackColor = true;
-            this.Button_AccessFile.Click += new System.EventHandler(this.ButtonClick_Access);
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(436, 96);
+            this.checkBox1.Location = new System.Drawing.Point(46, 78);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(101, 19);
             this.checkBox1.TabIndex = 13;
             this.checkBox1.Text = "Fever (Lagnat)";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(436, 131);
+            this.checkBox2.Location = new System.Drawing.Point(46, 103);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(225, 19);
             this.checkBox2.TabIndex = 14;
             this.checkBox2.Text = "Cough and/or Colds (Ubo at/o Sipon)";
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(430, 156);
+            this.checkBox3.Location = new System.Drawing.Point(46, 128);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(212, 19);
             this.checkBox3.TabIndex = 15;
@@ -361,7 +348,7 @@ namespace Contact_Tracing
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(436, 181);
+            this.checkBox4.Location = new System.Drawing.Point(46, 153);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(298, 19);
             this.checkBox4.TabIndex = 16;
@@ -371,7 +358,7 @@ namespace Contact_Tracing
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(430, 206);
+            this.checkBox5.Location = new System.Drawing.Point(46, 178);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(196, 19);
             this.checkBox5.TabIndex = 17;
@@ -381,7 +368,7 @@ namespace Contact_Tracing
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(430, 231);
+            this.checkBox6.Location = new System.Drawing.Point(46, 203);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(180, 19);
             this.checkBox6.TabIndex = 18;
@@ -391,7 +378,7 @@ namespace Contact_Tracing
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(430, 265);
+            this.checkBox7.Location = new System.Drawing.Point(46, 228);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(127, 19);
             this.checkBox7.TabIndex = 19;
@@ -401,7 +388,7 @@ namespace Contact_Tracing
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(430, 281);
+            this.checkBox8.Location = new System.Drawing.Point(46, 253);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(328, 19);
             this.checkBox8.TabIndex = 20;
@@ -411,7 +398,7 @@ namespace Contact_Tracing
             // checkBox9
             // 
             this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(420, 306);
+            this.checkBox9.Location = new System.Drawing.Point(46, 278);
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(319, 19);
             this.checkBox9.TabIndex = 21;
@@ -432,7 +419,6 @@ namespace Contact_Tracing
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.Button_AccessFile);
             this.Controls.Add(this.Button_Submit);
             this.Controls.Add(this.Button_Save2);
             this.Controls.Add(this.GroupBox_Question3);
@@ -449,7 +435,8 @@ namespace Contact_Tracing
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.ShowIcon = false;
-            this.Text = "Contact Tracing";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Contact Tracing for COVID-19";
             this.Load += new System.EventHandler(this.Form2_Load_1);
             this.TextChanged += new System.EventHandler(this.Question1_TextChanged);
             this.GroupBox_Question1.ResumeLayout(false);
@@ -493,7 +480,6 @@ namespace Contact_Tracing
         private System.Windows.Forms.RadioButton RadioButton_5Yes;
         private System.Windows.Forms.Button Button_Save2;
         private System.Windows.Forms.Button Button_Submit;
-        private System.Windows.Forms.Button Button_AccessFile;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;

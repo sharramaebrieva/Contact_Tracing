@@ -11,9 +11,7 @@ namespace Contact_Tracing
 {
     public partial class Form2 : Form
     {
-        StreamWriter Records;
-        StreamReader AccessFiles;
-
+        
         string Answer1 = "";
         string Answer2 = "";
         string Answer3 = "";
@@ -28,19 +26,12 @@ namespace Contact_Tracing
         string City = "";
 
         string Summary = "";
-
         string SummarySymptoms = "";
-        string symptom1 = "";
-        string symptom2 = "";
+        StreamWriter Records;
 
         public Form2()
         {
             InitializeComponent();
-        }
-
-        public void Form2_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Question1_TextChanged(object sender, EventArgs e)
@@ -50,6 +41,25 @@ namespace Contact_Tracing
 
         private void Button_Save2_Click(object sender, EventArgs e)
         {
+            if(checkBox1.Checked)
+            { SummarySymptoms = checkBox1.Text; }
+            if(checkBox2.Checked)
+            { SummarySymptoms += checkBox2.Text; }
+            if (checkBox3.Checked)
+            { SummarySymptoms += checkBox3.Text; }
+            if (checkBox4.Checked)
+            { SummarySymptoms += checkBox4.Text; }
+            if (checkBox5.Checked)
+            { SummarySymptoms += checkBox5.Text; }
+            if (checkBox6.Checked)
+            { SummarySymptoms += checkBox6.Text; }
+            if (checkBox7.Checked)
+            { SummarySymptoms += checkBox7.Text; }
+            if (checkBox8.Checked)
+            { SummarySymptoms += checkBox8.Text; }
+            if (checkBox9.Checked)
+            { SummarySymptoms += checkBox9.Text; }
+
             City = TextBox_SpecifyCity.Text;
 
             Summary = Result1 + "\n\n" + Result2 + "\n\n" + Result3 + "\n\n" + Result4 + "\n\n" + Result5;
@@ -108,12 +118,18 @@ namespace Contact_Tracing
         private void RadioButton_1Yes_CheckedChanged(object sender, EventArgs e)
         {
             Answer1 = "Yes";
+
             checkBox1.Enabled = true;
             checkBox2.Enabled = true;
+            checkBox3.Enabled = true;
+            checkBox4.Enabled = true;
+            checkBox5.Enabled = true;
+            checkBox6.Enabled = true;
+            checkBox7.Enabled = true;
+            checkBox8.Enabled = true;
+            checkBox9.Enabled = true;
 
-
-            SummarySymptoms = symptom1 + symptom2;
-            Result1 = "Experienced or did have any of the symptoms for the past 14 days:\n" + SummarySymptoms;
+            Result1 = "Experienced or did have any of the symptoms for the past 14 days:" + SummarySymptoms;
         }
 
         private void RadioButton_1No_CheckedChanged(object sender, EventArgs e)
@@ -121,6 +137,24 @@ namespace Contact_Tracing
             Answer1 = "No";
             checkBox1.Enabled = false;
             checkBox2.Enabled = false;
+            checkBox3.Enabled = false;
+            checkBox4.Enabled = false;
+            checkBox5.Enabled = false;
+            checkBox6.Enabled = false;
+            checkBox7.Enabled = false;
+            checkBox8.Enabled = false;
+            checkBox9.Enabled = false;
+
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+            checkBox5.Checked = false;
+            checkBox6.Checked = false;
+            checkBox7.Checked = false;
+            checkBox8.Checked = false;
+            checkBox9.Checked = false;
+
             Result1 = "Did not experience or did not have any of the symptoms for the past 14 days.";
         }
 
@@ -181,11 +215,6 @@ namespace Contact_Tracing
             TextBox_SpecifyCity.ReadOnly = true;
         }
 
-        private void Form2_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonClick_Submit(object sender, EventArgs e)
         {
             string Reference = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz";
@@ -197,30 +226,17 @@ namespace Contact_Tracing
                 Length[i] = Reference[ReferenceNumber.Next(Reference.Length)];
             }
             string NewReferenceNumber = new String(Length);
-            MessageBox.Show("Please take note of your Reference Number!\n" + NewReferenceNumber);
+            MessageBox.Show("Please take note of your Reference Number!\n\n" + NewReferenceNumber);
 
-            Records = File.AppendText(@"C:\Users\LENOVO\Desktop\trial.txt");
+            Records = File.AppendText(@"C:\Users\LENOVO\Desktop\Contact-Tracing-Info.txt");
             Records.WriteLine(Summary + "\n");
             Records.WriteLine("Reference Number: " + NewReferenceNumber);
             Records.Close();
         }
 
-        private void ButtonClick_Access(object sender, EventArgs e)
+        private void Form2_Load_1(object sender, EventArgs e)
         {
-            AccessFiles = File.OpenText(@"C:\Users\LENOVO\Desktop\trial.txt");
-            AccessFiles.Close();
-        }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBox1.Checked = true;
-            symptom1 = checkBox1.Text; 
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBox2.Checked = true;
-            symptom2 = checkBox2.Text;
         }
     }
 }

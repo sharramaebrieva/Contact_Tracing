@@ -61,7 +61,6 @@ namespace Contact_Tracing
             this.TextBox_DateToday = new System.Windows.Forms.DateTimePicker();
             this.Label_Email = new System.Windows.Forms.Label();
             this.TextBox_Email = new System.Windows.Forms.TextBox();
-            this.Button_Access = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Button_Save
@@ -69,7 +68,7 @@ namespace Contact_Tracing
             this.Button_Save.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button_Save.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Button_Save.Location = new System.Drawing.Point(223, 291);
+            this.Button_Save.Location = new System.Drawing.Point(245, 291);
             this.Button_Save.Name = "Button_Save";
             this.Button_Save.Size = new System.Drawing.Size(130, 50);
             this.Button_Save.TabIndex = 0;
@@ -83,7 +82,6 @@ namespace Contact_Tracing
             this.TextBox_LastName.Name = "TextBox_LastName";
             this.TextBox_LastName.Size = new System.Drawing.Size(155, 23);
             this.TextBox_LastName.TabIndex = 1;
-            this.TextBox_LastName.TextChanged += new System.EventHandler(this.TextBoxName_TextChanged);
             // 
             // RadioButton_Male
             // 
@@ -130,7 +128,7 @@ namespace Contact_Tracing
             this.Button_Next.Enabled = false;
             this.Button_Next.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button_Next.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Button_Next.Location = new System.Drawing.Point(385, 291);
+            this.Button_Next.Location = new System.Drawing.Point(419, 291);
             this.Button_Next.Name = "Button_Next";
             this.Button_Next.Size = new System.Drawing.Size(130, 50);
             this.Button_Next.TabIndex = 12;
@@ -354,22 +352,11 @@ namespace Contact_Tracing
             this.TextBox_Email.Size = new System.Drawing.Size(229, 23);
             this.TextBox_Email.TabIndex = 38;
             // 
-            // Button_Access
-            // 
-            this.Button_Access.Location = new System.Drawing.Point(550, 261);
-            this.Button_Access.Name = "Button_Access";
-            this.Button_Access.Size = new System.Drawing.Size(130, 23);
-            this.Button_Access.TabIndex = 39;
-            this.Button_Access.Text = "Access Records";
-            this.Button_Access.UseVisualStyleBackColor = true;
-            this.Button_Access.Click += new System.EventHandler(this.ButtonClick_Access);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 394);
-            this.Controls.Add(this.Button_Access);
+            this.ClientSize = new System.Drawing.Size(790, 360);
             this.Controls.Add(this.TextBox_Email);
             this.Controls.Add(this.Label_Email);
             this.Controls.Add(this.TextBox_DateToday);
@@ -405,7 +392,8 @@ namespace Contact_Tracing
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.Text = "Contact Tracing";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Contact Tracing for COVID-19";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,7 +433,6 @@ namespace Contact_Tracing
         private System.Windows.Forms.DateTimePicker TextBox_DateToday;
         private System.Windows.Forms.Label Label_Email;
         private System.Windows.Forms.TextBox TextBox_Email;
-        private System.Windows.Forms.Button Button_Access;
     }
 }
 
